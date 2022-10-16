@@ -2,15 +2,14 @@ $(document).ready(function () {
     // listen for save button clicks
     $('.saveBtn').on('click', function () {
         // get nearby values
-        $('#col-md-10 description').text(),
+        var text = $('div.textarea').text();
         // save in localStorage
-
+        localStorage.setItem('div.textarea', text);
         // Show notification that item was saved to localStorage by adding class 'show'
-
+        $('#notify').show();
         // Timeout to remove 'show' class after 5 seconds
-        setTimeout(function () {
-            $('.notification').removeClass('show');
-        }, 5000);
+        setTimeout('$("#notify").hide()',5000);
+        
     });
 
     function hourUpdater() {
