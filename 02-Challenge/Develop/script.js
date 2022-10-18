@@ -2,9 +2,9 @@ $(document).ready(function () {
     // listen for save button clicks
     $('.saveBtn').on('click', function () {
         // get nearby values
-        var text = $(this).closest(".textarea").text
+        var text = $(this).closest(".textarea").val();
         // save in localStorage
-        localStorage.setItem("text", )
+        localStorage.setItem("blockText", text);
         // Show notification that item was saved to localStorage by adding class 'show'
         $('#notify').show();
         // Timeout to remove 'show' class after 5 seconds
