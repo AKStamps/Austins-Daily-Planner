@@ -3,7 +3,7 @@ $(document).ready(function () {
     $('.saveBtn').on('click', function () {
         // get nearby values
         var time = $(this).parent().attr('id');
-        var content = $(this).siblings('.description');
+        var content = $(this).siblings('.description').val();
         // save in localStorage
         localStorage.setItem(time, content);
         // Show notification that item was saved to localStorage by adding class 'show'
@@ -45,6 +45,14 @@ $(document).ready(function () {
 
     // load any saved data from localStorage
     $('#hour-9 .description').val(localStorage.getItem('hour-9'));
+    $('#hour-9 .description').val(localStorage.getItem('hour-10'));
+    $('#hour-9 .description').val(localStorage.getItem('hour-11'));
+    $('#hour-9 .description').val(localStorage.getItem('hour-12'));
+    $('#hour-9 .description').val(localStorage.getItem('hour-13'));
+    $('#hour-9 .description').val(localStorage.getItem('hour-14'));
+    $('#hour-9 .description').val(localStorage.getItem('hour-15'));
+    $('#hour-9 .description').val(localStorage.getItem('hour-16'));
+    $('#hour-9 .description').val(localStorage.getItem('hour-17'));
     ///need to repeat line 21 for all the other hours
 
 
