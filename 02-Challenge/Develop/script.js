@@ -13,17 +13,19 @@ $(document).ready(function () {
     });
     
     function hourUpdater() {
-        // get current number of hours (preferably with moment.js)
+        // get current number of hours 
         currentHour = moment().hour();
         // loop over time blocks
         $('.time-block').each(function () {
             var blockHour = parseInt($(this).attr('id').split('-')[1]) ;
-
+        // sets blockhour to past class if it is before current time
             if (blockHour < currentHour) {
                 $(this).addClass('past');
+        // sets blockhour to current class of it is the current hour of the day
             }  else if (blockHour === currentHour) {
                 $(this).removeClass('past');
                 $(this).addClass('present');
+        // sets blockhour to future if it is listed hour is before current hour
             }  else {
                 $(this).removeClass('past');
                 $(this).removeClass('present');
@@ -31,11 +33,6 @@ $(document).ready(function () {
             }
         })
 
-        
-        // loop over time blocks ---> https://api.jquery.com/each/
-        // inside this loop, // check if we've moved past this time. If we have, make the row grey. If it's future, make it green. if it's past, make it red. Using the past, present, and future classes in css file
-
-        // check if we've moved past this time
     }
 
     hourUpdater();
@@ -56,14 +53,12 @@ $(document).ready(function () {
     $('#hour-17 .description').val(localStorage.getItem('hour-17'))
     ];
 
+    //appends local storage data to respective text areas
     $(loadPrev).append;
    
 
-    
-    ///need to repeat line 21 for all the other hours
 
-
-    // display current day on page
+    // displays current day on page
     function displayDate() {
     $("#currentDay").text(moment().format("dddd, MMMM Do"));
 
